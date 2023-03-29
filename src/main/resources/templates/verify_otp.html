@@ -1,0 +1,47 @@
+
+ <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+
+    <title>Login Page</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <!-- error message  -->
+    <div>
+        <div class="alert alert-danger">we have sent otp to your email...</div>
+    </div>
+
+    <div th:if="${session.message}" class="container">
+
+        <div class="alert alert-danger my-2 text-center" role="alert">
+
+            <span th:text="${session.message}"></span>
+
+        </div>
+
+        <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+
+    </div>
+
+    <form method="post" th:action="@{/verify-otp}">
+
+        <h2 class="title">verify otp</h2>
+
+        <div class="div">
+            <input required id="email" type="number" placeholder="Enter otp here" class="input" name="otp">
+        </div>
+
+        <div class="submit">
+            <input type="submit" class="btn" value="verify">
+        </div>
+    </form>
+</body>
+
+</html>

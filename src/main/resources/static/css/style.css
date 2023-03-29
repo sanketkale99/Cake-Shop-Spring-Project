@@ -1,0 +1,104 @@
+/* Login & Register Page CSS */
+form {
+	width: 300px;
+	border: 1px solid #d9d9d9;
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 200px;
+	height: 200px;
+	padding-top: 20%; /* Add padding */
+}
+
+.login-content img {
+	height: 60px;
+	margin-top: 20px; /* Add space from the top */
+	display: block;
+	margin-left: auto;
+	margin-right: auto; /* Center the image */
+}
+
+.login-content h4 {
+	color: #000000;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.login-content .input-div {
+	position: relative;
+	display: grid;
+	grid-template-columns: 7% 93%;
+	margin: 5px 0;
+	padding: 5px 0;
+	border-bottom: 1px solid #d9d9d9;
+	padding: 10px 0;
+}
+
+.i {
+	color: #d9d9d9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.input-div>div {
+	position: relative;
+	height: 40px;
+}
+
+.input-div>div>h5 {
+	position: absolute;
+	left: 10px;
+	transform: translateY(-50%);
+	color: #999;
+	font-size: 18px;
+	transition: .3s;
+}
+
+.input-div>div>input {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	background: none;
+	padding: 0.5rem 0.7rem;
+	font-size: 1.0rem;
+	color: #555;
+	font-family: 'poppins', sans-serif;
+}
+
+.login-content form button {
+  display: block;
+  margin: 0 auto;
+}
+
+
+a {
+	display: block;
+	text-align: right;
+	text-decoration: none;
+	color: #999;
+	font-size: 0.9rem;
+	transition: .3s;
+}
+
+a:hover {
+	color: #38d39f;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-group a {
+  margin: 0 10px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div th:if="${session.message}" class="container">
+		<div class="alert alert-danger my-2 text-center" role="alert">
+			<span th:text="${session.message}"></span>
+		</div>
+		<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+	</div>
+	<form method="post" th:action="@{/send-otp}">
+		<h2 class="title">Your Registered Email</h2>
+		<div class="div">
+			<input required id="email" type="email"
+				placeholder="Enter email here" class="input" name="email">
+		</div>
+		<div class="submit">
+			<input type="submit" class="btn">
+		</div>
+	</form>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Forgot Password Page</title>
+<link rel="stylesheet" th:href="@{/css/forgot_password.css}">
+</head>
+<body>
+
+	message box
+	<div th:if="${session.message}" class="container">
+
+		<div class="alert alert-danger my-2 text-center" role="alert">
+
+			<span th:text="${session.message}"> </span>
+		</div>
+		<th:block th:text="${#session.removeAttribute('message')}">
+		</th:block>
+	</div>
+	<div class="container">
+		<h1>Forgot Password</h1>
+		<p>Enter your email address and we'll send you instructions on how
+			to reset your password.</p>
+		<form th:action="@{/forgot_password}" method="get">
+			<label for="email">Enter Registered Email:</label> <input
+				type="email" id="email" name="email" placeholder="Enter email here"
+				required />
+			<button type="submit">Send OTP</button>
+		</form>
+		 <div class="back-to-login">
+			<a href="#" onclick="redirectToLogin()">Back to Login</a>
+		</div> 
+	</div>
+	<script>
+		function redirectToLogin() {
+			window.location.href = "/login";
+		}
+	</script>
+</body>
+</html>
+ -->
+
+
+
+

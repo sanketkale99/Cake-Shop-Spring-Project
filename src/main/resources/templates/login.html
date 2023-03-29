@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
+	rel="stylesheet">
+<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto"></ul>
+				<ul class="navbar-nav">
+					<li class="nav-item active"><a class="nav-link" th:href="@{/}"
+						href="#">Home</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/shop}" href="#">Shop</a></li>
+					<li class="nav-item active"><a class="nav-link"
+						th:href="@{/register}" href="#">Register</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- error message  -->
+	<div th:if="${param.error}">
+		<div class="alert alert-danger">Invalid user-name or password</div>
+	</div>
+
+
+	<div class="container" style="text-align: center;">
+		<div class="login-content">
+			<form method="post" th:action="@{/login}">
+				<img src="img/avatar.svg">
+				<h4 class="title">Welcome</h4>
+				<!-- Input field for email -->
+				<div class="input-div one" sec:authorize="isAuthenticated()">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						<input name="email" id="email" type="email" placeholder="Email"
+							class="input">
+					</div>
+				</div>
+				<!-- Input field for password -->
+				<div class="input-div pass" sec:authorize="isAuthenticated()">
+					<div class="i">
+						<i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+						<input id="password" type="password" placeholder="Password"
+							class="input" name="password">
+					</div>
+				</div>
+				<a th:href="@{/forgot}">Forgot Password?</a>
+				<!-- Login button -->
+				<button type="submit" class="btn btn-primary">Login</button>
+
+
+				<!-- Redirect to user dashboard if user is authenticated -->
+				<input type="hidden" sec:authorize="hasRole('ROLE_USER')"
+					name="redirect" value="/user/dashboard" />
+
+				<!-- Redirect to admin dashboard if admin is authenticated -->
+				<input type="hidden" sec:authorize="hasRole('ROLE_ADMIN')"
+					name="redirect" value="/admin/dashboard" /> <br>
+				<!-- Google -->
+				<a class="btn text-white" style="background-color: #dd4b39;"
+					href="#!" role="button"> <i class="fab fa-google"></i>
+				</a>
+
+				<!-- Github -->
+				<a class="btn text-white" style="background-color: #333333;"
+					href="#!" role="button"> <i class="fab fa-github"></i>
+				</a>
+
+				<!-- Linkedin -->
+				<a class="btn text-white" style="background-color: #0082ca;"
+					href="#!" role="button"> <i class="fab fa-linkedin-in"></i>
+				</a> <br> <span>Don't have an account? <a
+					th:href="@{/register}">Register Here</a>
+				</span>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update User</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="card-header">
+
+			<form method="post" th:action="@{/saveUser}" th:object="${user}" style="text-align: center;">
+
+			<h1>Update User Data</h1>
+			<hr>
+				<!-- Add hidden form field to handle update -->
+				<input type="hidden" th:field="*{id}" /> 
+				 <p> User-name: <input type="text" th:field="*{username}" class="">  </p>
+				<p> Name: <input type="text" th:field="*{name}" class=""> </p>
+				<p> Email: <input type="text" th:field="*{email}" class=""> </p>
+				<p> City: <input type="text" th:field="*{city}" class=""> </p>
+				<input type="hidden" th:field="*{password}" class="">
+				<button type="submit" class="btn btn-info col-3">Update</button>
+			</form>
+		<a th:href="@{/home}" style="text-align: left;"> Back To home page</a>
+		</div>
+	</div>
+</body>
+</html>
