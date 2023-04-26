@@ -3,8 +3,6 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Registration Page</title>
-<link rel="stylesheet" href="css/style.css">
 <link
 	href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
 	rel="stylesheet">
@@ -19,24 +17,26 @@
 	integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
 	crossorigin="anonymous">
 
+<title>Registration Page</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto"></ul>
+	<nav class="navbar navbar-expand-md">
+		<a class="navbar-brand" href="#">My Website</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
-				<li class="nav-item active"><a class="nav-link" th:href="@{/}"
-					href="#">Home</a></li>
-				<li class="nav-item active"><a class="nav-link"
-					th:href="@{/shop}" href="#">Shop</a></li>
-				<li class="nav-item active"><a class="nav-link"
-					th:href="@{/login}" href="#">Login</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/}">Home</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/shop}">Shop</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/login}">Login</a></li>
 			</ul>
 		</div>
 	</nav>
-
 	<!-- Success message  -->
 	<div th:if="${param.success}">
 		<div class="alert alert-info">You've successfully
@@ -55,7 +55,11 @@
 					</div>
 					<div class="div">
 						<input id="firstName" name="firstName" type="text"
-							placeholder="First Name" class="input" required="required">
+							placeholder="First Name" class="input" required="required"
+							pattern="[A-Za-z ]+" title="Please enter only letters">
+						<!-- <span
+					th:if="${#fields.hasErrors('Name')}" th:errors="*{Name}"
+					class="error"></span> -->
 					</div>
 				</div>
 				<div class="input-div one">
@@ -64,7 +68,8 @@
 					</div>
 					<div class="div">
 						<input id="lastName" name="lastName" type="text"
-							placeholder="last Name" class="input" required="required">
+							placeholder="last Name" class="input" required="required"
+							pattern="[A-Za-z ]+" title="Please enter only letters">
 					</div>
 				</div>
 				<div class="input-div one">

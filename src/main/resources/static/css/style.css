@@ -1,9 +1,9 @@
-/* Login & Register Page CSS */
+/*=========== Login & Register Page CSS========= */
 form {
 	width: 300px;
 	border: 1px solid #d9d9d9;
 	padding: 10px;
-	margin: 10px auto;
+	margin: 0px auto;
 }
 
 .container {
@@ -76,10 +76,9 @@ form {
 }
 
 .login-content form button {
-  display: block;
-  margin: 0 auto;
+	display: block;
+	margin: 0 auto;
 }
-
 
 a {
 	display: block;
@@ -91,14 +90,44 @@ a {
 }
 
 a:hover {
-	color: #38d39f;
+	color: #007bff;
 }
 
 .btn-group {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .btn-group a {
-  margin: 0 10px;
+	margin: 0 10px;
+}
+
+/*================================ nav bar css ==================================== */
+.navbar {
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 10px 20px;
+}
+
+.navbar-brand {
+	font-size: 1.5rem;
+	font-weight: bold;	
+}
+
+.navbar-brand:hover{
+	color: #007bff;
+}
+
+.navbar-nav {
+	margin-left: auto;
+}
+
+.nav-link {
+	color: #555;
+	font-weight: bold;
+	margin-right: 30px;
+}
+
+.nav-link:hover {
+	color: #007bff;
 }

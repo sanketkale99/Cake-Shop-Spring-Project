@@ -1,4 +1,4 @@
-.nav{
+/* .nav{
   max-width: 1024px;
   height: var(--header-height);
   display: flex;
@@ -46,4 +46,33 @@
 .nav__toggle{
   font-size: 1.3rem;
   cursor: pointer;
+} */
+
+
+
+/* ========================nav bar css ============================ */
+.navbar {
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 10px 20px;
 }
+
+.navbar-brand {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.navbar-nav {
+	margin-left: auto;
+}
+
+.nav-link {
+	color: #555;
+	font-weight: bold;
+	margin-right: 30px;
+}
+
+.nav-link:hover {
+	color: #007bff;
+}
+
